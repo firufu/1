@@ -176,15 +176,21 @@ winButton.MouseButton1Click:Connect(function()
     sendAwardCommand("Win")
 end)
 
+-- 7. 获得魔毯按钮
+local carpetButton = createButton("7. 获得魔毯 (Carpet)", 1.00)
+carpetButton.MouseButton1Click:Connect(function()
+    sendAwardCommand("Carpet")
+end)
+
 -- ========== 折叠功能 (已修复) ==========
--- 控制内容区域的展开与折叠 (已将高度调整为150以容纳6个按钮)
+-- 控制内容区域的展开与折叠 (已将高度调整为175以容纳7个按钮)
 local isExpanded = false
 foldButton.MouseButton1Click:Connect(function()
     isExpanded = not isExpanded
     if isExpanded then
         foldButton.Text = "▲"
-        -- 修改高度为150
-        TweenService:Create(contentFrame, TweenInfo.new(0.2), {Size = UDim2.new(1, 0, 0, 150)}):Play()
+        -- 修改高度为175
+        TweenService:Create(contentFrame, TweenInfo.new(0.2), {Size = UDim2.new(1, 0, 0, 175)}):Play()
     else
         foldButton.Text = "▼"
         TweenService:Create(contentFrame, TweenInfo.new(0.2), {Size = UDim2.new(1, 0, 0, 0)}):Play()
